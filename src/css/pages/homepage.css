@@ -1,0 +1,104 @@
+h2.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: var(--light-grey);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #6a11cb, var(--primary));
+    color: var(--white);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background: var(--highlight-color);
+    color: var(--white);
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-btn:hover {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Why Choose Us Section */
+.why-us-section {
+    background: var(--primary);
+    padding: 80px 20px;
+}
+
+.why-us-card {
+    background: var(--dark-grey);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.why-us-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.why-us-card .icon {
+    font-size: 3rem;
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+}
+
+/* Partners Section */
+.partners-section {
+    background: var(--light-grey);
+    padding: 60px 20px;
+}
+
+.partner-logo {
+    width: 100px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Courses Chart Section */
+.courses-chart {
+    background: var(--dark-grey);
+    padding: 60px 20px;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--primary);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
