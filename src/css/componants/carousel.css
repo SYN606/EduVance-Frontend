@@ -22,9 +22,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ensure the image stretches to fill the container */
     filter: blur(5px);
-    /* Optional: Blur effect for better text contrast */
 }
 
 /* Caption styling */
