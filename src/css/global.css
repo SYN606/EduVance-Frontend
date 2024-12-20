@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --primary: whitesmoke;
     --highlight-color: #ff7b54;
@@ -11,4 +15,8 @@ body {
     color: var(--dark-grey);
     margin: 0;
     padding: 0;
+}
+
+.user-invalid-pink:user-invalid {
+    @apply border-pink-500 focus:border-pink-500 focus:ring-pink-400 focus:outline-none focus:ring focus:ring-opacity-40
 }
