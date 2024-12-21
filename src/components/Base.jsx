@@ -1,14 +1,12 @@
-import { Container } from "reactstrap";
-import CustomNavbar from "./CustomNavbar";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 const Base = ({ children }) => {
     return (
         <>
-            <CustomNavbar />
-            <Container fluid className='pt-5'>
-                {children}
-            </ Container>
-            {/* <Footer /> */}
+            <Navbar />
+            {children}
+            <Footer />
         </>
     );
 }
