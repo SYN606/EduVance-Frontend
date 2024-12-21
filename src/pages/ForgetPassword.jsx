@@ -6,7 +6,7 @@ export default function ForgetPassword() {
     return (
         <Base>
             <div className="flex flex-col justify-center min-w-screen overflow-hidden px-2 sm:px-20 md:px-40 height-87">
-                <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-indigo-600/40 ring ring-2 ring-indigo-600 lg:max-w-xl">
+                <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-indigo-600/40 ring  ring-indigo-600 lg:max-w-xl">
                     <h1 className="text-3xl font-semibold text-center text-indigo-700 underline uppercase decoration-wavy">
                         Recover Password
                     </h1>
