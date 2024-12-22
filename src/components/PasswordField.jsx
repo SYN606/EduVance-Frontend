@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { LuEye, LuEyeOff } from "react-icons/lu";
 
 const PasswordField = ({ inputLabel = "Password" }) => {
     const [isClose, setIsClose] = useState(true);
@@ -18,7 +18,7 @@ const PasswordField = ({ inputLabel = "Password" }) => {
                     required
                 />
                 <span className='absolute right-2 cursor-pointer'
-                    onClick={() => setIsClose(!isClose)}>{isClose ? <FaEyeSlash /> : <FaEye />}</span>
+                    onClick={() => setIsClose(!isClose)}>{isClose ? <LuEyeOff size={24} /> : <LuEye size={24} />}</span>
             </div>
         </div>
     )
