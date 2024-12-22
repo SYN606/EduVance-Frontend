@@ -5,7 +5,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Link } from "react-router-dom";
-import Base from "../components/Base";
 import skill_india from '../img/logo-nsdc.png';
 import msme from '../img/logo-msme.png';
 import iso_20001 from '../img/logo-ISO-20001.png';
@@ -315,14 +314,12 @@ const TrainingPartners = () => {
 const Home = () => {
     return (
         <>
-            <Base>
                 <CarouselComponent items={items} />
                 <Courses />
                 <TrainingPartners />
                 <CertificationPartners />
                 <CourseCarousel />
                 <TrainingPlans />
-            </Base>
         </>
     );
 };

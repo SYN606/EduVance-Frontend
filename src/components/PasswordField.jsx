@@ -17,7 +17,7 @@ const PasswordField = ({ inputLabel = "Password" }) => {
                     className="block w-full px-4 py-2 pe-10 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40 user-invalid-pink"
                     required
                 />
-                <span className='absolute right-2'
+                <span className='absolute right-2 cursor-pointer'
                     onClick={() => setIsClose(!isClose)}>{isClose ? <FaEyeSlash /> : <FaEye />}</span>
             </div>
         </div>

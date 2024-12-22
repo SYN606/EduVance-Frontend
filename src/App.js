@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Login from "./pages/Login"
 import ForgetPassword from "./pages/ForgetPassword"
 import SignUp from "./pages/SignUp"
+import Base from "./components/Base"
 import './css/global.css'
 
 function App() {
@@ -10,11 +11,12 @@ function App() {
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/forget-password' element={<ForgetPassword />} />
-                    <Route path='/signup' element={<SignUp />} />
-                    {/* <Route path='/create_new_account' element={<SignupForm />} /> */}
+                    <Route path='/' element={<Base />} >
+                        <Route path='' element={<Home />} />
+                        <Route path='login' element={<Login />} />
+                        <Route path='forget-password' element={<ForgetPassword />} />
+                        <Route path='signup' element={<SignUp />} />
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </>
