@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.user-invalid-pink:user-invalid {
+    @apply border-pink-500 focus:border-pink-500 focus:ring-pink-400 focus:outline-none focus:ring focus:ring-opacity-40
+}
