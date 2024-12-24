@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaCheckCircle, FaLaptop, FaWifi, FaChalkboardTeacher, FaBuilding, FaCertificate } from 'react-icons/fa'; // Import icons
+import { Link } from "react-router-dom"
 
 const AboutUs = () => {
   return (
@@ -112,7 +113,7 @@ const AboutUs = () => {
           <Link to='c/'>
 
             <button className="px-6 py-3 bg-primary text-light font-bold rounded-lg shadow hover:bg-secondary">Explore Courses</button>
-            </Link>
+          </Link>
         </div>
       </section>
     </div>
