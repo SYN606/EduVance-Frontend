@@ -13,26 +13,33 @@ const Navbar = () => {
     // Array of nav items
     const navItems = [
         { text: "Home", link: "/" },
-        { text: "Courses", link: "c/" },
+        { text: "Courses", link: "/c/" },
         { text: "Services", link: "/services" },
         { text: "Contact", link: "/contact" },
         { text: "About", link: "/about_us" },
     ];
 
     return (
-        <nav className="bg-background text-text shadow-lg relative z-50">
+        <nav className="bg-background text-text shadow-md fixed top-0 left-0 w-full z-50">
             <div className="container mx-auto flex items-center justify-between px-6 py-2">
                 {/* Logo with Text */}
-                <div className="flex items-center space-x-2">
-                    <img src={LogoImage} alt="Logo" className="object-cover aspect-square w-14" />
-                    <Link to="/" className="text-2xl hover:text-accent transition-all duration-300">
+                <div className="flex items-center space-x-3">
+                    <img
+                        src={LogoImage}
+                        alt="Logo"
+                        className="object-cover aspect-square w-16 md:w-14 transition-all duration-300"
+                    />
+                    <Link
+                        to="/"
+                        className="text-3xl font-bold hover:text-accent transition-all duration-300"
+                    >
                         TekNavigators
                     </Link>
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-6">
-                    <ul className="flex space-x-6">
+                <div className="hidden md:flex items-center space-x-8">
+                    <ul className="flex space-x-8">
                         {navItems.map((item) => (
                             <li key={item.link}>
                                 <NavLink
@@ -50,7 +57,7 @@ const Navbar = () => {
                     <div>
                         <Link
                             to="/login"
-                            className="bg-accent text-white px-4 py-2 rounded-md hover:bg-background hover:text-primary transition-all duration-300"
+                            className="bg-accent text-white px-6 py-2 rounded-lg hover:bg-background hover:text-primary transition-all duration-300"
                         >
                             Login
                         </Link>
@@ -67,17 +74,16 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             <div
-                className={`md:hidden bg-background text-center absolute top-16 left-0 w-full overflow-hidden transition-all duration-500 ${isOpen ? "max-h-screen py-4" : "max-h-0"}`}
+                className={`md:hidden bg-background text-center absolute top-16 left-0 w-full overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-screen py-4" : "max-h-0"}`}
             >
-                <ul className="space-y-4">
+                <ul className="space-y-6">
                     {navItems.map((item) => (
                         <li key={item.link}>
                             <NavLink
                                 to={item.link}
                                 onClick={toggleMenu}
                                 className={({ isActive }) =>
-                                    `block text-lg hover:text-accent transition-all duration-300 ${isActive ? "text-accent font-semibold" : ""
-                                    }`
+                                    `block text-lg font-medium py-2 hover:text-accent transition-all duration-300 ${isActive ? "text-accent font-semibold" : ""}`
                                 }
                             >
                                 {item.text}
@@ -88,7 +94,7 @@ const Navbar = () => {
                         <Link
                             to="/login"
                             onClick={toggleMenu}
-                            className="block bg-accent text-white px-4 py-2 rounded-md mx-auto w-24 hover:bg-white hover:text-primary transition-all duration-300"
+                            className="block bg-accent text-white px-6 py-2 rounded-lg mx-auto w-28 hover:bg-white hover:text-primary transition-all duration-300"
                         >
                             Login
                         </Link>
