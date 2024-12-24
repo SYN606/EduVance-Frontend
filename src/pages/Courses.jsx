@@ -6,7 +6,7 @@ const Courses = () => {
     const categories = [
         {
             name: "Computer Basics",
-            icon: <FaDesktop className="text-4xl text-[#ec7932]" />,
+            icon: <FaDesktop className="text-4xl text-primary" />,
             courses: [
                 { title: "Introduction to Computers", description: "Learn the basics of computer hardware and software.", image: "https://via.placeholder.com/400x250?text=Computer+Basics" },
                 { title: "MS Office Suite", description: "Get familiar with Microsoft Office tools like Word, Excel, and PowerPoint.", image: "https://via.placeholder.com/400x250?text=MS+Office+Suite" },
@@ -17,7 +17,7 @@ const Courses = () => {
         },
         {
             name: "Cyber Security",
-            icon: <FaShieldAlt className="text-4xl text-[#ec7932]" />,
+            icon: <FaShieldAlt className="text-4xl text-primary" />,
             courses: [
                 { title: "Introduction to Cyber Security", description: "Learn the fundamentals of cyber security and how to protect systems.", image: "https://via.placeholder.com/400x250?text=Cyber+Security" },
                 { title: "Network Security", description: "Explore network security concepts and strategies to safeguard networks.", image: "https://via.placeholder.com/400x250?text=Network+Security" },
@@ -28,7 +28,7 @@ const Courses = () => {
         },
         {
             name: "Web Development",
-            icon: <FaLaptopCode className="text-4xl text-[#ec7932]" />,
+            icon: <FaLaptopCode className="text-4xl text-primary" />,
             courses: [
                 { title: "HTML & CSS Basics", description: "Learn how to structure and style webpages using HTML and CSS.", image: "https://via.placeholder.com/400x250?text=HTML+%26+CSS+Basics" },
                 { title: "JavaScript Fundamentals", description: "An introduction to JavaScript programming for web development.", image: "https://via.placeholder.com/400x250?text=JavaScript+Fundamentals" },
@@ -39,7 +39,7 @@ const Courses = () => {
         },
         {
             name: "Mechanical & Civil Engineering",
-            icon: <FaCog className="text-4xl text-[#ec7932]" />,
+            icon: <FaCog className="text-4xl text-primary" />,
             courses: [
                 { title: "Introduction to Mechanical Engineering", description: "Learn about the basics of mechanical systems and machinery.", image: "https://via.placeholder.com/400x250?text=Mechanical+Engineering" },
                 { title: "Structural Analysis", description: "A course focused on understanding the analysis of structures in civil engineering.", image: "https://via.placeholder.com/400x250?text=Structural+Analysis" },
@@ -52,18 +52,18 @@ const Courses = () => {
 
 
     return (
-        <div className="bg-[#fbf4f6] min-h-screen">
+        <div className="bg-background min-h-screen pt-16">
             <div className="container mx-auto p-8">
-                <h1 className="text-5xl font-extrabold text-[#083763] text-center mb-12">Our Courses</h1>
+                <h1 className="text-5xl font-extrabold text-text-color text-center mb-12">Our Courses</h1>
                 {categories.map((category, index) => (
                     <div key={index} className="mb-16">
                         <Link
                             to={`/c/${category.name.replace(/\s+/g, '-').toLowerCase()}`}
-                            className="text-[#ec7932] mt-4 inline-block hover:text-[#db8d84] transition duration-300"
+                            className="text-primary mt-4 inline-block hover:text-accent transition duration-300"
                         >
                             <div className="flex items-center mb-6">
                                 {category.icon}
-                                <h2 className="text-4xl font-semibold text-[#083763] ml-4">{category.name}</h2>
+                                <h2 className="text-4xl font-semibold text-text-color ml-4">{category.name}</h2>
                             </div>
                         </Link>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -74,11 +74,11 @@ const Courses = () => {
                                         alt={course.title}
                                         className="w-full h-56 object-cover rounded-lg mb-6"
                                     />
-                                    <h3 className="text-3xl font-medium text-[#083763] mb-4">{course.title}</h3>
-                                    <p className="text-[#6c5e78] mb-6">{course.description}</p>
+                                    <h3 className="text-3xl font-medium text-text-color mb-4">{course.title}</h3>
+                                    <p className="text-secondary mb-6">{course.description}</p>
                                     <Link
                                         to={`/c/${category.name.replace(/\s+/g, '-').toLowerCase()}/${course.title.replace(/\s+/g, '-').toLowerCase()}`}
-                                        className="text-[#ec7932] inline-block hover:text-[#db8d84] transition duration-300"
+                                        className="text-primary inline-block hover:text-accent transition duration-300"
                                     >
                                         Learn More
                                     </Link>

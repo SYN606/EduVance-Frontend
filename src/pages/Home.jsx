@@ -322,6 +322,9 @@ const TrainingPartners = () => {
 const Home = () => {
     return (
         <>
+            <Helmet>
+                
+            </Helmet>
             <CarouselComponent items={items} />
             <Courses />
             <TrainingPartners />

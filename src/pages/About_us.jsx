@@ -3,7 +3,7 @@ import { FaCheckCircle, FaLaptop, FaWifi, FaChalkboardTeacher, FaBuilding, FaCer
 
 const AboutUs = () => {
   return (
-    <div className="about-us bg-background text-text">
+    <div className="about-us bg-background text-text pt-16">
       {/* Hero Section */}
       <section className="hero bg-primary text-light py-16">
         <div className="container mx-auto text-center">
@@ -109,7 +109,10 @@ const AboutUs = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-4">Join Us Today!</h2>
           <p className="text-lg mb-6">Embark on a transformative journey with TekNavigators. Discover our courses and take the first step toward your dream career.</p>
-          <button className="px-6 py-3 bg-primary text-light font-bold rounded-lg shadow hover:bg-secondary">Explore Courses</button>
+          <Link to='c/'>
+
+            <button className="px-6 py-3 bg-primary text-light font-bold rounded-lg shadow hover:bg-secondary">Explore Courses</button>
+            </Link>
         </div>
       </section>
     </div>

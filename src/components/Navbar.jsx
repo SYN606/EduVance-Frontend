@@ -10,7 +10,6 @@ const Navbar = () => {
         setIsOpen(!isOpen);
     };
 
-    // Array of nav items
     const navItems = [
         { text: "Home", link: "/" },
         { text: "Courses", link: "/c/" },
