@@ -7,7 +7,7 @@ const AboutUs = () => {
       {/* Hero Section */}
       <section className="hero bg-primary text-light py-16">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">Welcome to TekNavigators</h1>
+          <h1 className="text-4xl font-bold mb-4">About TekNavigators</h1>
           <p className="text-lg">Your Partner in Career Transformation</p>
         </div>
       </section>

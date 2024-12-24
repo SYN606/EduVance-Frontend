@@ -13,6 +13,7 @@ const Navbar = () => {
     // Array of nav items
     const navItems = [
         { text: "Home", link: "/" },
+        { text: "Courses", link: "c/" },
         { text: "Services", link: "/services" },
         { text: "Contact", link: "/contact" },
         { text: "About", link: "/about_us" },

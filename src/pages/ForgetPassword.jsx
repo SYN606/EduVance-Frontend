@@ -12,7 +12,7 @@ export default function ForgetPassword() {
                     <InputField inputType="email" inputLabel="Email" />
                     <p className="text-xs font-light text-gray-700">
                         {" "}
-                        Remeber Your Password?{" "}
+                        Remember Your Password?{" "}
                         <Link
                             to="/login"
                             className="font-medium text-indigo-600 hover:underline"

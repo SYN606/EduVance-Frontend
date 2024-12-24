@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function AllCourses() {
+function CourseCat() {
     const [courses, setCourses] = useState([]);
 
     // Simulate fetching data from the backend
@@ -83,4 +83,4 @@ function AllCourses() {
     );
 }
 
-export default AllCourses;
+export default CourseCat;

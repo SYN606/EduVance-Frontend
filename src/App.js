@@ -6,8 +6,9 @@ import SignUp from "./pages/SignUp";
 import Base from "./components/Base";
 import "./css/global.css";
 import AboutUs from "./pages/About_us";
-import AllCourses from "./pages/AllCourses";
+import CourseCat from "./pages/CourseCategory";
 import NotFound from "./pages/NotFound"; // New 404 error page
+import Courses from "./pages/Courses";
 
 function App() {
     return (
@@ -20,7 +21,8 @@ function App() {
                         <Route path="login" element={<Login />} />
                         <Route path="forget-password" element={<ForgetPassword />} />
                         <Route path="signup" element={<SignUp />} />
-                        <Route path="c/:slug" element={<AllCourses />} />
+                        <Route path="c/" element={<Courses />} />
+                        <Route path="c/:slug" element={<CourseCat />} />
 
                         {/* Add a fallback 404 page for unmatched routes */}
                         <Route path="*" element={<NotFound />} />

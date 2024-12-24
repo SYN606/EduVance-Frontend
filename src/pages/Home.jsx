@@ -30,7 +30,7 @@ const items = [
         id: 1,
         src: "https://images.pexels.com/photos/16952014/pexels-photo-16952014/free-photo-of-coast.jpeg",
         altText: "Welcome to Teknavigators",
-        caption: "Nali website hai abhi ye"
+        caption: "Slide 1 Caption"
     },
     {
         id: 2,
