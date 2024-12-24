@@ -47,6 +47,14 @@ const items = [
 ];
 
 // Courses Cards
+const generateSlug = (title) => {
+    return title
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+};
+
 const Courses = () => {
     const courses = [
         {
@@ -85,7 +93,7 @@ const Courses = () => {
                         <div className="p-4">
                             <h5 className="text-xl font-bold text-blue-600">{course.title}</h5>
                             <p className="text-gray-600">{course.description.substring(0, 42)}...</p>
-                            <Link to={`/courses/${course.id}`} className="block mt-4">
+                            <Link to={`/c/${generateSlug(course.title)}`} className="block mt-4">
                                 <button className="bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Explore</button>
                             </Link>
                         </div>
@@ -314,12 +322,12 @@ const TrainingPartners = () => {
 const Home = () => {
     return (
         <>
-                <CarouselComponent items={items} />
-                <Courses />
-                <TrainingPartners />
-                <CertificationPartners />
-                <CourseCarousel />
-                <TrainingPlans />
+            <CarouselComponent items={items} />
+            <Courses />
+            <TrainingPartners />
+            <CertificationPartners />
+            <CourseCarousel />
+            <TrainingPlans />
         </>
     );
 };
