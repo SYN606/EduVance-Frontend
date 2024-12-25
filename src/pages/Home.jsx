@@ -1,10 +1,12 @@
 import { LuAtom, LuGraduationCap, LuMonitor, LuCode, LuUsers } from "react-icons/lu";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import helmet from "helmet";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Link } from "react-router-dom";
+// ------ ADDITIONAL IMPORTS ------
 import skill_india from '../img/logo-nsdc.png';
 import msme from '../img/logo-msme.png';
 import iso_20001 from '../img/logo-ISO-20001.png';
@@ -323,7 +325,7 @@ const Home = () => {
     return (
         <>
             <Helmet>
-                
+                <title>This is my webpage</title>
             </Helmet>
             <CarouselComponent items={items} />
             <Courses />
