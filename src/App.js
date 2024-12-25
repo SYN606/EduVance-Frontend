@@ -1,36 +1,40 @@
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import ForgetPassword from "./pages/ForgetPassword";
-import SignUp from "./pages/SignUp";
+import { HelmetProvider } from "react-helmet-async";
 import Base from "./components/Base";
 import "./css/global.css";
-import AboutUs from "./pages/About_us";
-import CourseCat from "./pages/CourseCategory";
-import NotFound from "./pages/NotFound"; // New 404 error page
-import Courses from "./pages/Courses";
+
+const Home = lazy(() => import("./pages/Home"));
+const Login = lazy(() => import("./pages/Login"));
+const ForgetPassword = lazy(() => import("./pages/ForgetPassword"));
+const SignUp = lazy(() => import("./pages/SignUp"));
+const AboutUs = lazy(() => import("./pages/About_us"));
+const CourseCat = lazy(() => import("./pages/CourseCategory"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Courses = lazy(() => import("./pages/Courses"));
 
 function App() {
-    return (
-        <>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Base />}>
-                        <Route path="" element={<Home />} />
-                        <Route path="about_us" element={<AboutUs />} />
-                        <Route path="login" element={<Login />} />
-                        <Route path="forget-password" element={<ForgetPassword />} />
-                        <Route path="signup" element={<SignUp />} />
-                        <Route path="c/" element={<Courses />} />
-                        <Route path="c/:slug" element={<CourseCat />} />
-
-                        {/* Add a fallback 404 page for unmatched routes */}
-                        <Route path="*" element={<NotFound />} />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
-        </>
-    );
+  return (
+    <HelmetProvider>
+      <BrowserRouter>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Base />}>
+              <Route path="" element={<Home />} />
+              <Route path="about_us" element={<AboutUs />} />
+              <Route path="login" element={<Login />} />
+              <Route path="forget-password" element={<ForgetPassword />} />
+              <Route path="signup" element={<SignUp />} />
+              <Route path="c/" element={<Courses />} />
+              <Route path="c/:slug" element={<CourseCat />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </HelmetProvider>
+  );
 }
 
-export default App;
+export default A
+    pp;
