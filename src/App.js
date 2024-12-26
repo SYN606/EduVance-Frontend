@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Base from "./components/Base";
 import "./css/global.css";
 import { HeadProvider } from "react-head";
+import ScrollToTop from './components/ScrollToTop'; 
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
@@ -18,6 +19,7 @@ function App() {
     <HeadProvider>
       <BrowserRouter>
         <Suspense fallback={<div>Loading...</div>}>
+          <ScrollToTop /> 
           <Routes>
             <Route path="/" element={<Base />}>
               <Route path="" element={<Home />} />
