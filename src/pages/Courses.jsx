@@ -16,7 +16,7 @@ const Courses = () => {
                 setLoading(false);
             })
             .catch((err) => {
-                setError("Error fetching data");
+                setError("Error fetching data", err);
                 setLoading(false);
             });
     }, []);
@@ -36,31 +36,37 @@ const Courses = () => {
                 {coursesData.map((courseCategory, index) => (
                     <div key={index} className="mb-16">
                         <Link
-                            to={`/c/${courseCategory.category.slug}`}
+                            to={`/c/${courseCategory.slug}`}
                             className="text-primary mt-4 inline-block hover:text-accent transition duration-300"
                         >
                             <div className="flex items-center mb-6">
                                 <FaDesktop className="text-4xl text-primary" />
-                                <h2 className="text-4xl font-semibold text-text-color ml-4">{courseCategory.category.name}</h2>
+                                <h2 className="text-4xl font-semibold text-text-color ml-4">{courseCategory.name}</h2>
                             </div>
                         </Link>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
-                                <img
-                                    src={courseCategory.main_image}
-                                    alt={courseCategory.slug}
-                                    className="w-full h-56 object-cover rounded-lg mb-6"
-                                />
-                                <h3 className="text-3xl font-medium text-text-color mb-4">{courseCategory.slug}</h3>
-                                <p className="text-secondary mb-6">{courseCategory.description}</p>
-                                <Link
-                                    to={`/c/${courseCategory.category.slug}/${courseCategory.slug}`}
-                                    className="text-primary inline-block hover:text-accent transition duration-300"
-                                >
-                                    Learn More
-                                </Link>
+                        {courseCategory.courses.length > 0 ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {courseCategory.courses.map((course, courseIndex) => (
+                                    <div key={courseIndex} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                                        <img
+                                            src={`http://127.0.0.1:8000${course.main_image}`}
+                                            alt={course.slug}
+                                            className="w-full h-56 object-cover rounded-lg mb-6"
+                                        />
+                                        <h3 className="text-3xl font-medium text-text-color mb-4">{course.course_title}</h3>
+                                        <p className="text-secondary mb-6">{course.description}</p>
+                                        <Link
+                                            to={`/c/${courseCategory.slug}/${course.slug}`}
+                                            className="text-primary inline-block hover:text-accent transition duration-300"
+                                        >
+                                            Learn More
+                                        </Link>
+                                    </div>
+                                ))}
                             </div>
-                        </div>
+                        ) : (
+                            <p className="text-secondary">No courses available in this category.</p>
+                        )}
                     </div>
                 ))}
             </div>
