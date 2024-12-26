@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Base from "./components/Base";
 import "./css/global.css";
+import { HeadProvider } from "react-head";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
@@ -14,24 +15,24 @@ const Courses = lazy(() => import("./pages/Courses"));
 
 function App() {
   return (
-    // <HelmetProvider>
-    <BrowserRouter>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Base />}>
-            <Route path="" element={<Home />} />
-            <Route path="about_us" element={<AboutUs />} />
-            <Route path="login" element={<Login />} />
-            <Route path="forget-password" element={<ForgetPassword />} />
-            <Route path="signup" element={<SignUp />} />
-            <Route path="c/" element={<Courses />} />
-            <Route path="c/:slug" element={<CourseCat />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
-    // </HelmetProvider>
+    <HeadProvider>
+      <BrowserRouter>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Base />}>
+              <Route path="" element={<Home />} />
+              <Route path="about_us" element={<AboutUs />} />
+              <Route path="login" element={<Login />} />
+              <Route path="forget-password" element={<ForgetPassword />} />
+              <Route path="signup" element={<SignUp />} />
+              <Route path="c/" element={<Courses />} />
+              <Route path="c/:slug" element={<CourseCat />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </HeadProvider>
   );
 }
 

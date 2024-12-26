@@ -1,10 +1,10 @@
 import { LuAtom, LuGraduationCap, LuMonitor, LuCode, LuUsers } from "react-icons/lu";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Link } from "react-router-dom";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Link } from "react-router-dom";
 // ------ ADDITIONAL IMPORTS ------
 import skill_india from '../img/logo-nsdc.png';
 import msme from '../img/logo-msme.png';
@@ -24,6 +24,7 @@ import jlnp from '../img/jlnp_logo.png'
 import gp_ayodhya from '../img/gp_ayodhya.png'
 import gp_basti from '../img/gp_basti.png'
 import gp_gorakhpur from '../img/gp_gorakhpur.png'
+import { Title } from "react-head";
 
 // carousel items
 const items = [
@@ -323,6 +324,7 @@ const TrainingPartners = () => {
 const Home = () => {
     return (
         <>
+            <Title>Teknavigators - Homepage</Title>
             <CarouselComponent items={items} />
             <Courses />
             <TrainingPartners />

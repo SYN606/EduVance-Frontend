@@ -1,3 +1,4 @@
+import { Title } from 'react-head';
 import { FaCheckCircle, FaLaptop, FaWifi, FaChalkboardTeacher, FaBuilding, FaCertificate } from 'react-icons/fa'; // Import icons
 import { Link } from "react-router-dom"
 
@@ -5,6 +6,7 @@ import { Link } from "react-router-dom"
 const AboutUs = () => {
   return (
     <>
+      <Title>TekNavigators - About Us</Title>
       <div className="about-us bg-background text-text pt-16">
         {/* Hero Section */}
         <section className="hero bg-primary text-light py-16">
