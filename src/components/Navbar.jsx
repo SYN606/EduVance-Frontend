@@ -22,11 +22,11 @@ const Navbar = () => {
         <nav className="bg-background text-text shadow-md fixed top-0 left-0 w-full z-50">
             <div className="container mx-auto flex items-center justify-between px-6 py-2">
                 {/* Logo with Text */}
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center sm:space-x-3">
                     <img
                         src={LogoImage}
                         alt="Logo"
-                        className="object-cover aspect-square w-16 md:w-14 transition-all duration-300"
+                        className="object-cover aspect-square w-16 md:w-14 w-12 transition-all duration-300"
                     />
                     <Link
                         to="/"
@@ -37,7 +37,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden lg:flex items-center space-x-8">
                     <ul className="flex space-x-8">
                         {navItems.map((item) => (
                             <li key={item.link}>
@@ -64,7 +64,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Menu Toggle */}
-                <div className="md:hidden">
+                <div className="lg:hidden flex items-center">
                     <button onClick={toggleMenu} className="focus:outline-none">
                         {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                     </button>
@@ -73,7 +73,7 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             <div
-                className={`md:hidden bg-background text-center absolute top-16 left-0 w-full overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-screen py-4" : "max-h-0"}`}
+                className={`lg:hidden bg-background text-center absolute top-16 left-0 w-full overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-screen py-4" : "max-h-0"}`}
             >
                 <ul className="space-y-6">
                     {navItems.map((item) => (

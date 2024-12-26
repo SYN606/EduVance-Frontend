@@ -157,7 +157,7 @@ const CourseCarousel = () => {
             >
                 {courses.map((course, index) => (
                     <SwiperSlide key={index} className="flex flex-col items-center p-4">
-                        <div className="mb-3">{course.icon}</div>
+                        <div className="mb-3 flex justify-center">{course.icon}</div>
                         <p className="text-lg font-medium">{course.title}</p>
                     </SwiperSlide>
                 ))}

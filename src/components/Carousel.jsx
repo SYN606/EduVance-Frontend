@@ -8,7 +8,7 @@ import { EffectFade, Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const CarouselComponent = ({ items }) => {
     return (
-        <div className="relative w-full h-[500px] flex justify-center items-center overflow-hidden z-10">
+        <div className="relative w-full h-[500px] flex justify-center items-center overflow-hidden z-10 mt-16">
             <Swiper
                 modules={[Navigation, Pagination, EffectFade, Autoplay]}
                 navigation
