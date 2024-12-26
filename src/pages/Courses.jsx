@@ -49,11 +49,10 @@ const Courses = () => {
         }
     ];
 
-
     return (
         <div className="bg-background min-h-screen pt-16">
             <div className="container mx-auto p-8">
-                <h1 className="text-5xl font-extrabold text-text-color text-center mb-12">Our Courses</h1>
+                <h1 className="text-5xl font-bold text-text text-center mb-12">Our Courses</h1>
                 {categories.map((category, index) => (
                     <div key={index} className="mb-16">
                         <Link
