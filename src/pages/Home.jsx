@@ -1,7 +1,6 @@
 import { LuAtom, LuGraduationCap, LuMonitor, LuCode, LuUsers } from "react-icons/lu";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import helmet from "helmet";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -324,9 +323,6 @@ const TrainingPartners = () => {
 const Home = () => {
     return (
         <>
-            <Helmet>
-                <title>This is my webpage</title>
-            </Helmet>
             <CarouselComponent items={items} />
             <Courses />
             <TrainingPartners />
