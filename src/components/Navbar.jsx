@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import LogoImage from "../img/tekNav_logo.png";
+import LogoImage from "../img/EduVance_logo.png";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,13 +27,13 @@ const Navbar = () => {
                         <img
                             src={LogoImage}
                             alt="Logo"
-                            className="object-cover aspect-square md:w-14 w-12 transition-all duration-300"
+                            className="object-cover aspect-square rounded-full md:w-14 w-12 transition-all duration-300"
                         />
                         <Link
                             to="/"
                             className="text-3xl font-bold hover:text-accent transition-all duration-300"
                         >
-                            TekNavigators
+                            EduVance
                         </Link>
                     </div>
 

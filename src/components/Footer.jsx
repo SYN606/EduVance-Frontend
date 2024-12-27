@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import LogoImage from '../img/tekNav_logo.png'; // Replace with your logo path
+import LogoImage from '../img/EduVance_logo.png'; // Replace with your logo path
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* Company Logo and Description */}
                     <div className="space-y-4">
-                        <img src={LogoImage} alt="Company Logo" className="w-32 object-cover aspect-square mx-auto" />
+                        <img src={LogoImage} alt="Company Logo" className="w-32 object-cover aspect-square mx-auto rounded-full" />
                         <p className="text-sm">
                             EduTech is committed to providing top-quality online education and resources to students worldwide.
                             Our mission is to make learning accessible and engaging for all.

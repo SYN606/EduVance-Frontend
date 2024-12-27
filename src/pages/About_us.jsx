@@ -6,12 +6,12 @@ import { Link } from "react-router-dom"
 const AboutUs = () => {
   return (
     <>
-      <Title>TekNavigators - About Us</Title>
+      <Title>EduVance - About Us</Title>
       <div className="about-us bg-background text-text pt-16">
         {/* Hero Section */}
         <section className="hero bg-primary text-light py-16">
           <div className="container mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">About TekNavigators</h1>
+            <h1 className="text-4xl font-bold mb-4">About EduVance</h1>
             <p className="text-lg">Your Partner in Career Transformation</p>
           </div>
         </section>
@@ -21,7 +21,7 @@ const AboutUs = () => {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-6 text-center">Who We Are</h2>
             <p className="text-lg leading-relaxed">
-              At TekNavigators, we are committed to empowering learners with industry-relevant skills. As a globally recognized leader in training and placement solutions, we hold ISO 9001:2015 and ISO 27001:2013 certifications. Our goal is to bridge the gap between education and employment, ensuring our students thrive in the fast-evolving tech landscape.
+              At EduVance, we are committed to empowering learners with industry-relevant skills. As a globally recognized leader in training and placement solutions, we hold ISO 9001:2015 and ISO 27001:2013 certifications. Our goal is to bridge the gap between education and employment, ensuring our students thrive in the fast-evolving tech landscape.
             </p>
           </div>
         </section>
@@ -59,7 +59,7 @@ const AboutUs = () => {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-6 text-center">Our Impact and Results</h2>
             <p className="text-lg leading-relaxed text-center">
-              Thousands of engineers have transformed their careers through TekNavigators. From tailored industrial training to placement success in leading MNCs, our programs are designed for real-world impact.
+              Thousands of engineers have transformed their careers through EduVance. From tailored industrial training to placement success in leading MNCs, our programs are designed for real-world impact.
             </p>
           </div>
         </section>
@@ -97,11 +97,11 @@ const AboutUs = () => {
             <h2 className="text-3xl font-bold mb-6 text-center">What Our Students Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="testimonial bg-white shadow-md rounded-lg p-6">
-                <p className="leading-relaxed italic">"The hands-on training and industry insights at TekNavigators equipped me for a career I had only dreamed of before."</p>
+                <p className="leading-relaxed italic">"The hands-on training and industry insights at EduVance equipped me for a career I had only dreamed of before."</p>
                 <span className="block mt-4 text-right text-sm font-bold">- A Happy Graduate</span>
               </div>
               <div className="testimonial bg-white shadow-md rounded-lg p-6">
-                <p className="leading-relaxed italic">"TekNavigators' expert trainers and state-of-the-art facilities made all the difference in my professional journey."</p>
+                <p className="leading-relaxed italic">"EduVance' expert trainers and state-of-the-art facilities made all the difference in my professional journey."</p>
                 <span className="block mt-4 text-right text-sm font-bold">- A Satisfied Professional</span>
               </div>
             </div>
@@ -112,7 +112,7 @@ const AboutUs = () => {
         <section className="call-to-action py-12 bg-accent text-light text-center">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-4">Join Us Today!</h2>
-            <p className="text-lg mb-6">Embark on a transformative journey with TekNavigators. Discover our courses and take the first step toward your dream career.</p>
+            <p className="text-lg mb-6">Embark on a transformative journey with EduVance. Discover our courses and take the first step toward your dream career.</p>
             <Link to='c/'>
 
               <button className="px-6 py-3 bg-primary text-light font-bold rounded-lg shadow hover:bg-secondary">Explore Courses</button>

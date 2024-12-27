@@ -11,19 +11,6 @@ import msme from '../img/logo-msme.png';
 import iso_20001 from '../img/logo-ISO-20001.png';
 import iso_9001 from '../img/logo-ISO-9001.png';
 import CarouselComponent from '../components/Carousel';
-// images for training partners
-import iul_logo from '../img/iul_logo.png'
-import bbd_logo from '../img/bbdu-logo.png'
-import goel_logo from '../img/goel_logo.png'
-import bansal_logo from '../img/bansal_logo.png'
-import rr_logo from '../img/rr_logo.png'
-import sr_logo from '../img/sr_logo.png'
-import hewett_logo from '../img/hewett_logo.png'
-import gp_gonda from '../img/gp_gonda_logo.png'
-import jlnp from '../img/jlnp_logo.png'
-import gp_ayodhya from '../img/gp_ayodhya.png'
-import gp_basti from '../img/gp_basti.png'
-import gp_gorakhpur from '../img/gp_gorakhpur.png'
 import { Title } from "react-head";
 
 // carousel items
@@ -31,7 +18,7 @@ const items = [
     {
         id: 1,
         src: "https://images.pexels.com/photos/16952014/pexels-photo-16952014/free-photo-of-coast.jpeg",
-        altText: "Welcome to Teknavigators",
+        altText: "Welcome to EduVance",
         caption: "Slide 1 Caption"
     },
     {
@@ -214,33 +201,37 @@ const TrainingPlans = () => {
 
 
 const TrainingPartners = () => {
-    const graduationColleges = [
-        { name: "Integral University", logo: iul_logo },
-        { name: "BBD University", logo: bbd_logo },
-        { name: "Goel Group of Institutions", logo: goel_logo },
-        { name: "Bansal IET", logo: bansal_logo },
-        { name: "RR Group of Institution", logo: rr_logo },
-        { name: "SR Group of Institution", logo: sr_logo },
+    const csUniversities = [
+        { name: "Massachusetts Institute of Technology (MIT)", logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/44/MIT_Seal.svg/800px-MIT_Seal.svg.png' },
+
+        { name: "Stanford University", logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Seal_of_Leland_Stanford_Junior_University.svg/800px-Seal_of_Leland_Stanford_Junior_University.svg.png' },
+
+        { name: "Carnegie Mellon University (CMU)", logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Carnegie_Mellon_University_seal.svg/800px-Carnegie_Mellon_University_seal.svg.png' },
+
+        { name: "University of California, Berkeley", logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/800px-Seal_of_University_of_California%2C_Berkeley.svg.png' },
+
+        { name: "University of Cambridge", logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Coat_of_Arms_of_the_University_of_Cambridge.svg/800px-Coat_of_Arms_of_the_University_of_Cambridge.svg.png' },
     ];
 
-    const diplomaColleges = [
-        { name: "Hewett Polytechnic", logo: hewett_logo },
-        { name: "Government Polytechnic Gonda", logo: gp_gonda },
-        { name: "JawaharLal Nehru Polytechnic", logo: jlnp },
-        { name: "Government Polytechnic Faizabad(Ayodhya)", logo: gp_ayodhya },
-        { name: "Government Polytechnic Basti", logo: gp_basti },
-        { name: "Government Polytechnic Gorakhpur", logo: gp_gorakhpur },
+    const aeroUniversities = [
+        { name: "California Institute of Technology (Caltech)", logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Seal_of_the_California_Institute_of_Technology.svg/800px-Seal_of_the_California_Institute_of_Technology.svg.png' },
+
+        { name: "Massachusetts Institute of Technology (MIT)", logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/44/MIT_Seal.svg/800px-MIT_Seal.svg.png' },
+
+        { name: "University of Michigan", logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Seal_of_the_University_of_Michigan.svg/800px-Seal_of_the_University_of_Michigan.svg.png' },
+
+        { name: "Embry-Riddle Aeronautical University", logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Embry-Riddle_Aeronautical_University_seal.svg/800px-Embry-Riddle_Aeronautical_University_seal.svg.png' },
+
+        { name: "Cranfield University", logo: 'https://upload.wikimedia.org/wikipedia/en/4/4c/Cranfield_University_Arms_2007.jpg' },
     ];
     return (
         <div className="container mx-auto py-16 px-4">
             <h2 className="text-center text-3xl font-bold text-blue-700 mb-8">
                 Training Partners
             </h2>
-
-            {/* Graduation Colleges Carousel */}
             <div className="mb-16">
                 <h3 className="text-xl font-semibold text-text mb-4">
-                    Graduation Colleges
+                    Top Computer Science Colleges
                 </h3>
                 <Swiper
                     spaceBetween={30}
@@ -260,7 +251,7 @@ const TrainingPartners = () => {
                     modules={[Autoplay, Pagination]}
                     className="my-8"
                 >
-                    {graduationColleges.map((college, index) => (
+                    {csUniversities.map((college, index) => (
                         <SwiperSlide key={index}>
                             <div className="text-center bg-white rounded-lg py-6 hover:shadow-xl transition-shadow duration-300">
                                 <img
@@ -277,10 +268,9 @@ const TrainingPartners = () => {
                 </Swiper>
             </div>
 
-            {/* Diploma Colleges Carousel */}
             <div>
                 <h3 className="text-xl font-semibold mb-4 text-text">
-                    Diploma Colleges
+                    Top Aeronautics Colleges
                 </h3>
                 <Swiper
                     spaceBetween={30}
@@ -301,7 +291,7 @@ const TrainingPartners = () => {
                     modules={[Autoplay, Pagination]}
                     className="my-8"
                 >
-                    {diplomaColleges.map((college, index) => (
+                    {aeroUniversities.map((college, index) => (
                         <SwiperSlide key={index}>
                             <div className="text-center bg-white rounded-lg py-6 hover:shadow-xl transition-shadow duration-300">
                                 <img
@@ -324,7 +314,7 @@ const TrainingPartners = () => {
 const Home = () => {
     return (
         <>
-            <Title>Teknavigators - Homepage</Title>
+            <Title>EduVance - Homepage</Title>
             <CarouselComponent items={items} />
             <Courses />
             <TrainingPartners />
