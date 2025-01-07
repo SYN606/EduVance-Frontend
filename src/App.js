@@ -13,6 +13,7 @@ const AboutUs = lazy(() => import("./pages/About_us"));
 const CourseCat = lazy(() => import("./pages/CourseCategory"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Courses = lazy(() => import("./pages/Courses"));
+const UserProfile = lazy(() => import("./pages/UserProfile"));
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<Base />}>
               <Route path="" element={<Home />} />
               <Route path="about_us" element={<AboutUs />} />
+              <Route path="user_profile" element={<UserProfile />} />
               <Route path="login" element={<Login />} />
               <Route path="forget-password" element={<ForgetPassword />} />
               <Route path="signup" element={<SignUp />} />
