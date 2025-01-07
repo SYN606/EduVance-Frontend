@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-
-# EduVance - Frontend Only
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and is a frontend template along with backend connection with django.
-
-## Features
-- Built with [React 19](https://react.dev/blog/2024/12/05/react-19)
-- Tailwind CSS for styling 
-- Dynamic title for every page
-- [API connection with backend](https://github.com/SYN606/EduVance-Frontend/tree/django-api)
-- Dynamic carousel using Swiper
-=======
 # EduVance - Frontend with Django DRF Integration
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It serves as a frontend template integrated with a Django REST Framework (DRF) backend for seamless API communication.
@@ -24,7 +11,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - User authentication with backend integration (login and registration)
 - Fetch and display dynamic data from DRF API endpoints
 - Error handling for API requests
->>>>>>> b56e1da1817611dc8917cf9828d86fc934e2ef17
 
 ## Available Scripts
 
