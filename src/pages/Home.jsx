@@ -17,19 +17,19 @@ import { Title } from "react-head";
 const items = [
     {
         id: 1,
-        src: "https://images.pexels.com/photos/16952014/pexels-photo-16952014/free-photo-of-coast.jpeg",
+        src: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
         altText: "Welcome to EduVance",
         caption: "Slide 1 Caption"
     },
     {
         id: 2,
-        src: "https://images.pexels.com/photos/16952016/pexels-photo-16952016/free-photo-of-coast.jpeg",
+        src: "https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg",
         altText: "Slide 2",
         caption: "Slide 2 Caption"
     },
     {
         id: 3,
-        src: "https://images.pexels.com/photos/19887096/pexels-photo-19887096/free-photo-of-a-boat-on-the-beach-with-a-blanket-and-a-bag.jpeg",
+        src: "https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg",
         altText: "Slide 3",
         caption: "Slide 3 Caption"
     }

@@ -47,7 +47,7 @@ const NotFound = () => {
         }
 
         if (input === "exit") {
-            window.location.href = "/"; // Use Link for navigation instead if you want to avoid page reload
+            window.location.href = "/"; 
             return;
         }
 
@@ -82,7 +82,7 @@ const NotFound = () => {
             <Title>
                 The requested page is not found, Please choose the correct url.
             </Title>
-            <div className="flex items-center justify-center h-screen bg-gray-900 text-gray-100">
+            <div className="flex items-center justify-center h-dvh bg-gray-900 text-gray-100">
                 <main className="w-11/12 max-w-3xl bg-gray-800 rounded-lg shadow-lg overflow-hidden">
                     <header className="flex items-center justify-between bg-gray-700 px-4 py-2">
                         <div>
