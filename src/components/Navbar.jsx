@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa"; // Add the profile icon
+import { useAuth } from "../context/AuthContext";  // Import the custom Auth context
 import LogoImage from "../img/EduVance_logo.png";
 
 const Navbar = () => {
+    const { isAuthenticated } = useAuth();  // Get the authentication status
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -55,12 +57,22 @@ const Navbar = () => {
                             ))}
                         </ul>
                         <div>
-                            <Link
-                                to="/login"
-                                className="bg-accent text-white px-6 py-2 rounded-lg hover:bg-background hover:text-primary transition-all duration-300"
-                            >
-                                Login
-                            </Link>
+                            {!isAuthenticated ? (
+                                <Link
+                                    to="/login"
+                                    className="bg-accent text-white px-6 py-2 rounded-lg hover:bg-background hover:text-primary transition-all duration-300"
+                                >
+                                    Login
+                                </Link>
+                            ) : (
+                                <Link
+                                    to="/profile"  // Navigate to the profile page
+                                    className="bg-accent text-white px-6 py-2 rounded-lg flex items-center hover:bg-background hover:text-primary transition-all duration-300"
+                                >
+                                    <FaUserCircle className="mr-2" />  {/* Profile icon */}
+                                    Profile
+                                </Link>
+                            )}
                         </div>
                     </div>
 
@@ -91,13 +103,24 @@ const Navbar = () => {
                             </li>
                         ))}
                         <li>
-                            <Link
-                                to="/login"
-                                onClick={toggleMenu}
-                                className="block bg-accent text-white px-6 py-2 rounded-lg mx-auto w-28 hover:bg-white hover:text-primary transition-all duration-300"
-                            >
-                                Login
-                            </Link>
+                            {!isAuthenticated ? (
+                                <Link
+                                    to="/login"
+                                    onClick={toggleMenu}
+                                    className="block bg-accent text-white px-6 py-2 rounded-lg mx-auto w-28 hover:bg-white hover:text-primary transition-all duration-300"
+                                >
+                                    Login
+                                </Link>
+                            ) : (
+                                <Link
+                                    to="/profile"
+                                    onClick={toggleMenu}
+                                    className="bg-accent text-white px-6 py-2 rounded-lg mx-auto w-28 flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300"
+                                >
+                                    <FaUserCircle className="mr-2" />
+                                    Profile
+                                </Link>
+                            )}
                         </li>
                     </ul>
                 </div>

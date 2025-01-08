@@ -5,7 +5,7 @@ import './css/global.css';
 import { HeadProvider } from "react-head";
 import ScrollToTop from './components/ScrollToTop';
 import ProtectedRoute from "./components/ProtectedRoute";
-import { AuthProvider } from './context/AuthContext';  // Import AuthProvider
+import { AuthProvider } from './context/AuthContext';
 
 // Lazy-loaded pages
 const pages = {
@@ -23,7 +23,6 @@ const pages = {
 
 function App() {
   return (
-    // Wrap the entire app with the AuthProvider to share authentication state globally
     <AuthProvider>
       <HeadProvider>
         <BrowserRouter>
@@ -42,6 +41,10 @@ function App() {
                 />
                 <Route
                   path="user_profile"
+                  element={<ProtectedRoute element={<pages.UserProfile />} />}
+                />
+                <Route
+                  path="profile"
                   element={<ProtectedRoute element={<pages.UserProfile />} />}
                 />
 
