@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function OTPPage() {
-    const { state } = useLocation();
     const navigate = useNavigate();
     const [otp, setOtp] = useState('');
     const [timer, setTimer] = useState(240);
     const [isTimeUp, setIsTimeUp] = useState(false);
+    const [sentOtp] = useState('');
+    const userId = localStorage.getItem('user_id'); // Get user_id from local storage
+
+    const email = localStorage.getItem('email');
 
     useEffect(() => {
+        if (sentOtp === '') {
+        }
+
         if (timer === 0) {
             setIsTimeUp(true);
             return;
         }
+
         const interval = setInterval(() => {
             setTimer((prevTimer) => prevTimer - 1);
         }, 1000);
 
         return () => clearInterval(interval);
-    }, [timer]);
+    }, [timer, sentOtp]);
 
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);
@@ -30,13 +37,31 @@ function OTPPage() {
         setOtp(e.target.value);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (otp === "123456") {
-            alert("OTP Verified Successfully!");
-            navigate('/');
-        } else {
-            alert("Invalid OTP, please try again.");
+
+        const otpData = { user_id: userId, otp };  // Create JSON object with user_id and OTP
+
+        try {
+            const response = await fetch('http://localhost:8000/api/verify-otp/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(otpData), // Send JSON object to the backend
+                credentials: 'include', // Send cookies if needed
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("OTP Verified Successfully!");
+                navigate('/'); // Redirect to the homepage or any other page on success
+            } else {
+                alert(data.message || 'Invalid OTP. Please try again.');
+            }
+        } catch (err) {
+            alert('An error occurred. Please try again later.');
         }
     };
 
@@ -52,7 +77,7 @@ function OTPPage() {
         <div className="flex justify-center items-center h-screen bg-background">
             <div className="bg-white p-8 rounded-lg shadow-lg w-96 max-w-md">
                 <h2 className="text-2xl font-semibold text-center text-text mb-6">OTP Verification</h2>
-                <p className="text-center text-sm text-secondary mb-4">A One-Time Password (OTP) has been sent to your email: <strong>{state?.email}</strong></p>
+                <p className="text-center text-sm text-secondary mb-4">A One-Time Password (OTP) has been sent to your email: <strong>{email}</strong></p>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-6">
                         <label className="block text-sm font-medium text-text mb-2">Enter OTP</label>

@@ -11,57 +11,14 @@ export default function Login() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Get email and password from state if provided by SignUp
     useEffect(() => {
         if (location.state) {
-            setEmail(location.state.email);
-            setPassword(location.state.password);
+            setEmail(location.state.email || '');  // Ensure default value if undefined
+            setPassword(location.state.password || '');  // Ensure default value if undefined
         }
     }, [location]);
 
-    // Function to set JWT tokens in cookies
-    const setJwtCookies = (accessToken, refreshToken) => {
-        document.cookie = `access_token=${accessToken}; path=/; HttpOnly; Secure; SameSite=Strict`;
-        document.cookie = `refresh_token=${refreshToken}; path=/; HttpOnly; Secure; SameSite=Strict`;
-    };
-
-    // Function to refresh the access token using the refresh token
-    const refreshAccessToken = async () => {
-        const refreshToken = getCookie('refresh_token');
-        if (!refreshToken) return;
-
-        try {
-            const response = await fetch('http://localhost:8000/api/token/refresh/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ refresh_token: refreshToken }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                setJwtCookies(data.access_token, refreshToken); // Save new access token in cookies
-                return data.access_token; // Return the new access token
-            } else {
-                throw new Error('Failed to refresh access token');
-            }
-        } catch (error) {
-            console.error('Error refreshing token:', error);
-            setError('Session expired. Please log in again.');
-            return null;
-        }
-    };
-
-    // Helper function to get a cookie value
-    const getCookie = (name) => {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-        return null;
-    };
-
+    // Function to handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -72,23 +29,25 @@ export default function Login() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ email, password }),
+                credentials: 'include',
             });
 
             const data = await response.json();
 
             if (response.ok) {
-                // Handle success, navigate to OTP verification or dashboard
-                console.log('Login Successful:', data);
+                const userId = data.user_id;  // Backend sends 'user_id'
 
-                // Set JWT tokens in cookies
-                setJwtCookies(data.access_token, data.refresh_token);
-
-                navigate('/verify_otp'); // Example of redirect after login
+                if (userId) {
+                    localStorage.setItem('user_id', userId);  // Save user_id to localStorage
+                    localStorage.setItem('email', email);  // Save email to localStorage
+                    navigate('/verify_otp');
+                } else {
+                    setError('User ID is missing. Please try again.');
+                }
             } else {
                 setError(data.message || 'Login failed. Please try again.');
             }
         } catch (err) {
-            console.error('Error:', err);
             setError('An error occurred. Please try again later.');
         }
     };

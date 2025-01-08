@@ -1,39 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import Footer from "./Footer";
-import Navbar from "./Navbar";
-import { FaTimes } from 'react-icons/fa';
+import Footer from './Footer';
+import Navbar from './Navbar';
+import Messages from './Messages';
 
 const Base = () => {
     const [errorMessage, setErrorMessage] = useState('');
-    const location = useLocation();  // useLocation inside the Router context
+    const [messageType, setMessageType] = useState(''); // Keep track of message type
+    const location = useLocation();
 
     useEffect(() => {
         const message = localStorage.getItem('redirectMessage');
+        const messageType = localStorage.getItem('messageType') || 'error'; // Default type is 'error'
         if (message) {
             setErrorMessage(message);
+            setMessageType(messageType);
             localStorage.removeItem('redirectMessage');
+            localStorage.removeItem('messageType');
         }
     }, [location]);
 
+    const clearMessage = () => {
+        setErrorMessage('');
+        setMessageType('');
+    };
+
     return (
         <div>
-            {/* navbar */}
             <Navbar />
-
-            {/* Error Message */}
-            {errorMessage && (
-                <div className="fixed top-0 left-1/2 transform -translate-x-1/2 bg-red-500 text-white py-2 px-4 rounded-md z-50 flex items-center justify-between">
-                    <span>{errorMessage}</span>
-                    <button
-                        className="ml-4 text-white"
-                        onClick={() => setErrorMessage('')}
-                    >
-                        <FaTimes />
-                    </button>
-                </div>
-            )}
-
+            <Messages message={errorMessage} clearMessage={clearMessage} type={messageType} />
             <Outlet />
             <Footer />
         </div>
